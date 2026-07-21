@@ -8,7 +8,7 @@ Shufflow is an AI-native, ADHD-friendly productivity app that helps users stay p
 
 ## Overview
 
-Most productivity tools assume that users select one task, remain focused, and finish it before moving on. Shufflow is designed for a different reality: attention changes, interruptions happen, and people often need to restart to unfinished tasks.
+Most productivity tools assume that users select one task, remain focused, and finish it before moving on. Shufflow is designed for a different reality: attention changes, interruptions happen, and people often need to return to unfinished tasks.
 
 Shufflow breaks complex work into connected steps, preserves task context, and recommends a relevant next action based on factors such as available time, energy, priority, and difficulty.
 
@@ -45,32 +45,29 @@ For OpenAI Build Week, we used GPT-5.6 and Codex to create a substantially new f
 The following existed before the submission period:
 
 - Original Shufflow product concept
-- Initial task-management workflow
-- Task breakdown, recommendation, and summarisation features
-- Preliminary interface and working prototype
-- Two rounds of user interviews
-- Initial usability survey
+- AI-assisted task breakdown workflow
+- Task recommendation and prioritisation logic
+- Context preservation concept for interrupted tasks
+- Initial web prototype
 
 ### Built during Build Week
 
 The following work was completed during the submission period:
+- Flow Cube interaction system: Created a fidget-inspired spatial interaction model that represents a user's current workflow state as a manipulable object. Users can interact with the cube to navigate between tasks while maintaining awareness of their current progress and context.
 
-- **[Interaction name]:** [Explain what the user does and how it supports starting, switching, or returning.]
-- **[Interaction name]:** [Explain the visible behavior and the problem it addresses.]
-- **[Interaction name]:** [Explain the visible behavior and its connection to the user research.]
-- **[Technical component]:** [Identify the new component, state logic, animation, accessibility work, or integration.]
-- **[Testing work]:** [Identify tests, evaluation, debugging, or performance improvements completed with Codex.]
+- Swipe-based task transition interaction: Implemented directional gestures where users intentionally swipe right to shuffle to a recommended next task and swipe left to return to the previous task. This reduces accidental switching and keeps the user in control of transitions.
 
-Evidence of this work is available through:
+- Adaptive timer and visual feedback system: Redesigned the timer and interaction feedback to remain visible while avoiding interference with task names, step names, and essential workflow information.
 
-- **Build Week commit range:** [Link to dated commits]
-- **Primary Codex Session ID:** [Session ID obtained through `/feedback`]
-- **New or substantially changed files:** [List important files or directories]
-- **Before-and-after documentation:** [Link or repository path]
 
 ## Why fidget-inspired interaction?
 
-During user interviews, participants described using physical fidget objects as part of their daily routines. This led us to examine the interaction principles behind those objects, including immediacy, repetition, low-friction movement, and sensory feedback.
+During user interviews, participants described using physical fidget objects as part of their daily routines. This led us to investigate interaction principles behind these objects, including:
+- Immediate physical feedback
+- Simple repetitive actions
+- Low cognitive demand
+- Small moments of engagement
+- Sensory cues that support transitions
 
 Our goal was not to place a decorative digital toy inside a productivity app. We wanted to translate useful interaction qualities into actions that could reduce the effort required to begin, switch, and resume work.
 
@@ -122,25 +119,6 @@ Our team remained responsible for the key decisions:
 - Selecting which generated suggestions and code changes to accept
 - Reviewing the final implementation for product fit and technical quality
 
-Our CTO, Liwen Gao, directed the technical implementation and reviewed the code produced or modified with Codex.
-
-## Key product decisions
-
-| Decision | Reason |
-|---|---|
-| Treat task-switching as a supported transition | Switching can preserve momentum when it is deliberate and context is retained. |
-| Prioritize returnability | Users should not need to reconstruct their previous thinking after an interruption. |
-| Recommend, rather than automatically switch | The user should remain in control of their workflow. |
-| Keep interactions purposeful | A fidget-inspired interface should support action rather than become another distraction. |
-| Prefer a few clear actions | Early feedback showed that simplicity mattered more than feature quantity. |
-
-## User research and validation
-
-We conducted two rounds of research with 15 adults with diagnosed ADHD or strong ADHD indicators.
-
-The baseline prototype later received 25 usability-survey responses and achieved a System Usability Scale score of 82.7. Participants particularly valued the shuffle function, AI-assisted task breakdown, and context recovery.
-
-This score relates to **[identify the tested prototype version and date]**. It is an early usability signal and should not be interpreted as clinical evidence or as validation of functionality added after that test.
 
 ## Technology
 
@@ -308,41 +286,3 @@ src/
 └── test/             Automated tests
 ```
 
-## Known limitations
-
-- The current usability results apply to an early prototype and a limited sample.
-- The new fidget-inspired interactions require further testing with a broader group.
-- AI recommendations may occasionally require user correction.
-- Shufflow is a productivity product and is not a diagnostic or medical-treatment tool.
-- [Add current technical limitation.]
-- [Add current platform or browser limitation.]
-
-## What we learned
-
-Powerful AI is not enough by itself. The most useful features began with a real user problem and a clear understanding of the moment when assistance was needed.
-
-We also learned that returnability is a core product property. A productivity tool should not only help someone start; it should make it easy to resume after attention moves elsewhere.
-
-Finally, the smallest interaction details can have the greatest effect. Reducing visual noise and presenting a few clear actions often improves the experience more than adding additional features.
-
-## What’s next
-
-We are onboarding early testers and plan to:
-
-- Evaluate the new fidget-inspired interactions
-- Measure time to next action and time to resume
-- Improve task recommendation transparency
-- Expand accessibility testing
-- Develop a user-ready release over the next two months
-
-## Team
-
-- **Tianhui [surname] — Cofounder:** [Role]
-- **Liwen Gao — CTO:** Technical development and code review
-- **[Team member] — [Role]**
-
-## License and third-party materials
-
-Project license: [Link to `LICENSE` or state the applicable terms]
-
-Third-party libraries, assets, APIs, and datasets are used according to their respective licenses and terms. See [dependency or attribution file] for details.
