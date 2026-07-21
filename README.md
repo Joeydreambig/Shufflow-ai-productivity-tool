@@ -124,16 +124,12 @@ Our team remained responsible for the key decisions:
 
 ### Current stack
 
-- **Frontend:** [React/Vite/Next.js/other]
-- **Language:** [TypeScript/JavaScript/other]
-- **Styling and components:** [Tailwind CSS/shadcn/ui/other]
-- **Backend:** [Supabase/Node.js/other]
-- **Database:** [Supabase/PostgreSQL/other]
-- **Authentication:** [Provider]
-- **AI services:** [List the runtime AI services and models]
+- **Frontend:** React 19, TanStack Start, TanStack Router, Vite 7
+- **Language:** TypeScript
+- **Styling and components:** Tailwind CSS 4, shadcn/ui-style components, Radix UI, Lucide React, custom CSS 3D animations
+- **Backend:** TanStack Start server functions running through Nitro/Cloudflare Workers
+- **AI services:** Lovable AI Gateway with google/gemini-3-flash-preview
 - **Development tools:** GPT-5.6, Codex, Google AI Studio, and Lovable
-
-Development tools are listed separately from runtime services. GPT-5.6 or Codex should not be described as powering the deployed application unless they are actually called at runtime.
 
 ## Local setup
 
@@ -141,22 +137,22 @@ Development tools are listed separately from runtime services. GPT-5.6 or Codex 
 
 Install:
 
-- Node.js [required version, preferably from `.nvmrc`]
-- npm [required version]
+- Node.js 22.12 or later
+- pnpm 11.x; version 11.9.0 was used to verify the current build
 - Git
-- Accounts or credentials for [required external services]
+- A Lovable account and API key if the AI features need to be exercised
 
 ### 1. Clone the repository
 
 ```bash
-git clone [REPOSITORY_URL]
+git clone <PUBLIC_REPOSITORY_URL> shufflow
 cd shufflow
 ```
 
 ### 2. Install dependencies
 
 ```bash
-npm install
+pnpm install --frozen-lockfile
 ```
 
 Use `npm ci` instead when installing directly from a committed lockfile:
